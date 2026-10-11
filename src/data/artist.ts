@@ -19,7 +19,7 @@ export interface Album {
   artworkIsPlaceholder: boolean;
   tracks?: string[];
   edition?: AlbumEdition;
-  links: { website?: string; streaming?: string; purchase?: string; deluxeStreaming?: string; bandcamp?: string; physical?: string; tunegoody?: string };
+  links: { website?: string; streaming?: string; purchase?: string; deluxeStreaming?: string; bandcamp?: string; physical?: string; tunegoody?: string; appleMusic?: string; spotify?: string };
 }
 
 export const artist = {
@@ -52,35 +52,35 @@ export const albums: Album[] = [
       tracks: ['Once the Dust Settles (Interlude)', 'The Final Bow (Act IV)', 'After the Applause', 'Play It Back', 'Keep the Show Going', 'Exit Stage Left'],
       formats: ['Digital download', 'CD', 'Vinyl'], streamingAvailable: false,
     },
-    links: { website: 'https://hd5album.netlify.app' },
+    links: {website: 'https://hd5album.netlify.app', appleMusic: 'https://music.apple.com/us/album/the-death-of-a-star/1868886199', spotify: 'https://open.spotify.com/search/Hayden%20Davis%20the%20death%20of%20a%20star' },
   },
   {
     slug: 'summer-blues', title: 'Summer Blues', status: 'released', palette: 'summer',
     theme: 'A season. A feeling. A little blue.',
     description: 'Soft light, distant horizons, and the bittersweet feeling of a summer that cannot stay. A world of vacation memories and warmth touched by melancholy.',
     note: 'For the moments between the sunshine and the leaving.',
-    artworkIsPlaceholder: true, links: { streaming: 'https://distrokid.com/hyperfollow/haydendavis3/summer-blues', deluxeStreaming: 'https://distrokid.com/hyperfollow/haydendavis3/summer-blues-the-low-tide-edition', bandcamp: 'https://haydendavisoff.bandcamp.com/album/summer-blues', physical: 'https://haydendavisoff.bandcamp.com/album/summer-blues' },
+    artworkIsPlaceholder: true, links: {streaming: 'https://distrokid.com/hyperfollow/haydendavis3/summer-blues', deluxeStreaming: 'https://distrokid.com/hyperfollow/haydendavis3/summer-blues-the-low-tide-edition', bandcamp: 'https://haydendavisoff.bandcamp.com/album/summer-blues', physical: 'https://haydendavisoff.bandcamp.com/album/summer-blues', appleMusic: 'https://music.apple.com/us/album/summer-blues-the-low-tide-edition/1832402539', spotify: 'https://open.spotify.com/search/Hayden%20Davis%20summer%20blues' },
   },
   {
     slug: 'silent-goodbyes', title: 'Silent Goodbyes', status: 'released', palette: 'goodbyes',
     theme: 'Some endings have no words.',
     description: 'A deep-green world of friendships, distance, and farewell. Silent Goodbyes sits with the space between people, and the feelings that remain when their paths split.',
     note: 'The quiet weight of growing apart.',
-    artworkIsPlaceholder: true, links: {},
+    artworkIsPlaceholder: true, links: {appleMusic: 'https://music.apple.com/us/album/silent-goodbyes-the-echoes-of-friendships-edition/1764688025', spotify: 'https://open.spotify.com/search/Hayden%20Davis%20silent%20goodbyes' },
   },
   {
     slug: 'lost-in-the-memories', title: 'Lost in the Memories', status: 'released', palette: 'memories',
     theme: 'The past, after dark.',
     description: 'Night thoughts and the pull of reminiscence. A dark-blue world where old moments return, familiar yet changed, and memories become somewhere to get lost.',
     note: 'For the thoughts that stay awake with you.',
-    artworkIsPlaceholder: true, links: {},
+    artworkIsPlaceholder: true, links: {appleMusic: 'https://music.apple.com/us/album/lost-in-the-memories-the-intrusive-thoughts-edition/1757778706', spotify: 'https://open.spotify.com/search/Hayden%20Davis%20lost%20in%20the%20memories' },
   },
   {
     slug: 'these-days', title: 'These Days', status: 'released', palette: 'days',
     theme: 'Between daylight and deep space.',
     description: 'Mustard yellow meets black in a world of day, night, and space. These Days finds a story in shifting light and the ordinary moments held between it.',
     note: 'A different perspective on the everyday.',
-    artworkIsPlaceholder: true, links: { deluxeStreaming: 'https://distrokid.com/hyperfollow/haydendavis3/these-days-the-insomnia-edition-2' },
+    artworkIsPlaceholder: true, links: {deluxeStreaming: 'https://distrokid.com/hyperfollow/haydendavis3/these-days-the-insomnia-edition-2', appleMusic: 'https://music.apple.com/us/album/these-days-the-insomnia-edition/1756410049', spotify: 'https://open.spotify.com/search/Hayden%20Davis%20these%20days' },
   },
 ];
 
