@@ -6,7 +6,7 @@ All artist copy and albums live in `src/data/artist.ts`. Change `artist.name`, b
 
 Albums are in newest-to-oldest order. Add genuine cover images under `src/assets` (import and assign the imported URL to `artworkPath`) or `public/artwork` (assign `/artwork/filename.jpg`). Set `artworkIsPlaceholder` to false once genuine artwork is added. The current CSS covers and generated stage photograph are creative concept studies, not official album artwork or artist photos.
 
-Add verified streaming, purchase, and website URLs to each album's `links`. Absent links remain hidden. The Final Bow Edition's purchase link is separate, and that edition must never be offered as streaming. Unknown tracklists are omitted. Toxins remains in progress with no release date or sales links.
+Add verified streaming, purchase, and website URLs to each album's `links`. Absent links remain hidden. The Final Bow Edition's purchase link is separate, and that edition must never be offered as streaming. Unknown tracklists are omitted. Unannounced projects stay off the site entirely until officially announced.
 
 Set `artist.siteUrl` only when the real public domain is available. This enables page canonical URLs. At that point, create `public/sitemap.xml` containing `/`, `/music`, all five `/music/{slug}` pages, `/about`, and `/contact`, and add its absolute URL to `public/robots.txt`. No placeholder sitemap hostname is shipped.
 

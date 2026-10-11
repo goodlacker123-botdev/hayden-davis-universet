@@ -2,7 +2,7 @@ import { createFileRoute, Link } from '@tanstack/react-router';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { AlbumCard } from '@/components/album-card';
-import { albums, artist, upcoming } from '@/data/artist';
+import { albums, artist } from '@/data/artist';
 import { pageHead } from '@/lib/metadata';
 import theaterStudy from '@/assets/theater-study.jpg';
 

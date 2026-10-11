@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { albums, createMailDraft, getEditionTracks, upcoming } from './artist';
+import { albums, createMailDraft, getEditionTracks } from './artist';
 
 describe('confirmed artist release rules', () => {
   it('keeps all five released albums in the supplied order', () => {
@@ -19,9 +19,8 @@ describe('confirmed artist release rules', () => {
     expect(albums[0]?.edition?.streamingAvailable).toBe(false);
     expect(albums[0]?.edition?.formats).toEqual(['Digital download', 'CD', 'Vinyl']);
   });
-  it('keeps Toxins in progress and out of released albums', () => {
-    expect(upcoming.status).toBe('in-progress');
-    expect(albums.some(a => a.title === 'Toxins')).toBe(false);
+  it('excludes unannounced projects from the site entirely', () => {
+    expect(albums.every(a => a.status === 'released')).toBe(true);
   });
   it('uses the supplied microsite only as an album website', () => {
     expect(albums[0]?.links).toEqual({ website: 'https://hd5album.netlify.app' });
