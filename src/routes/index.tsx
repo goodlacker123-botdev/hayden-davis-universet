@@ -1,24 +1,27 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from '@tanstack/react-router';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { AlbumCard } from '@/components/album-card';
+import { albums, artist, upcoming } from '@/data/artist';
+import { pageHead } from '@/lib/metadata';
+import theaterStudy from '@/assets/theater-study.jpg';
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute('/')({
+  head: () => pageHead('Official artist website', 'Explore the instrumental worlds of Hayden Davis. Discover The Death of a Star, Summer Blues, Silent Goodbyes, and the complete discography.', '/'),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
+  return <>
+    <div className="artist-heading page-width"><h1>{artist.name}</h1><div className="heading-caption"><span className="micro">Instrumental music / Emotional storytelling</span><span className="artist-tagline">{artist.tagline}</span></div></div>
+    <section className="stage-hero page-width" aria-labelledby="latest-title">
+      {/* Generated stage concept, not an artist photograph or official album cover. */}
+      <img className="stage-image" src={theaterStudy} alt="Burgundy theater curtains opening onto an empty, softly lit stage — visual concept" width={1600} height={1008} fetchPriority="high" />
+      <div className="stage-content"><div className="stage-top"><span className="micro">The latest chapter</span><span className="micro">Hayden Davis / Album 05</span></div><h2 id="latest-title" className="stage-title">The Death<br />of a Star<span>.</span></h2><div className="stage-bottom"><div><p>Fame. Fire. The final curtain.</p><Button asChild className="stage-action"><Link to="/music">Explore music <ArrowUpRight size={16} /></Link></Button></div><p className="stage-side-note">A cinematic instrumental world.<br />An ending that echoes.</p></div></div>
+    </section>
+    <div className="stage-under page-width"><span className="micro">The Death of a Star / Latest release</span><Link to="/music/$slug" params={{ slug: 'the-death-of-a-star' }} className="text-link">Step inside the album <ArrowRight size={15} /></Link></div>
+    <section className="releases-section page-width"><div className="section-heading"><div><span className="micro">The discography</span><h2>Five worlds. One artist.</h2></div><Link to="/music" className="text-link">All releases <ArrowUpRight size={17} /></Link></div><div className="album-grid">{albums.map((album,index) => <AlbumCard key={album.slug} album={album} index={index} />)}</div></section>
+    <section className="artist-note page-width"><span className="micro">Behind the music</span><div><h2>No words.<br />Plenty left to say.</h2><p>{artist.bio}</p><Link to="/about" className="text-link">Meet {artist.name} <ArrowUpRight size={17} /></Link></div></section>
+    <section className="upcoming-note page-width"><div><span className="micro">In the studio / Upcoming</span><h2>{upcoming.title}</h2></div><p>{upcoming.description}</p></section>
+  </>;
 }

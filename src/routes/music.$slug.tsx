@@ -1,0 +1,25 @@
+import { useState } from 'react';
+import { createFileRoute, Link, notFound } from '@tanstack/react-router';
+import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { AlbumArt } from '@/components/album-art';
+import { albums, getAlbum, getEditionTracks } from '@/data/artist';
+import { pageHead } from '@/lib/metadata';
+export const Route = createFileRoute('/music/$slug')({
+ loader: ({ params }) => { const album = getAlbum(params.slug); if (!album) throw notFound(); return album; },
+ head: ({ loaderData, params }) => loaderData ? pageHead(loaderData.title, loaderData.description, `/music/${params.slug}`) : { meta: [{ title: 'Album not found — Hayden Davis' }, { name: 'robots', content: 'noindex' }] },
+ component: AlbumPage,
+});
+function AlbumPage() { const album = Route.useLoaderData(); return <AlbumDetail key={album.slug} slug={album.slug} />; }
+function AlbumDetail({ slug }: { slug: string }) {
+ const [expanded,setExpanded] = useState(false);
+ const album = getAlbum(slug);
+ if (!album) return null;
+ const index = albums.findIndex(item => item.slug === slug);
+ const next = albums[index + 1];
+ const tracks = getEditionTracks(album, expanded);
+ return <>
+ <section className={`album-hero era-${album.palette}`}><div className="page-width album-hero-inner"><div><Link to="/music" className="text-link"><ArrowLeft size={16} /> All music</Link><h1>{album.title}</h1><span className="micro">Released album / Instrumental</span><p>{album.theme}</p></div><AlbumArt album={album} eager /></div></section>
+ <div className="page-width"><div className="album-details"><section><span className="micro">Inside the world</span><h2>{album.theme}</h2><p>{album.description}</p><p className="mt-5">{album.note}</p>{album.links.website && <a href={album.links.website} target="_blank" rel="noopener noreferrer" className="text-link">Visit album website <ArrowUpRight size={17} /></a>}{album.links.streaming && <a href={album.links.streaming} target="_blank" rel="noopener noreferrer" className="text-link">Listen to the standard album <ArrowUpRight size={17} /></a>}{album.links.purchase && <a href={album.links.purchase} target="_blank" rel="noopener noreferrer" className="text-link">Purchase album <ArrowUpRight size={17} /></a>}{album.edition && <><h2 className="mt-10">{album.edition.title}</h2><p>The story continues with six additional tracks and a fourth act. Available exclusively as digital download, CD, and vinyl. This edition is not available on streaming services.</p>{album.edition.purchaseUrl && <a className="text-link" href={album.edition.purchaseUrl} target="_blank" rel="noopener noreferrer">Purchase the Final Bow Edition <ArrowUpRight size={17} /></a>}</>}</section><section aria-label={tracks.length ? 'Album tracklist' : 'Album story'}>{tracks.length ? <><div className="section-heading"><div><span className="micro">The running order</span><h2>Tracklist</h2></div><span className="micro">{tracks.length} tracks</span></div>{album.edition && <div className="edition-control" role="group" aria-label="Album edition"><Button variant={expanded ? 'ghost' : 'default'} aria-pressed={!expanded} onClick={() => setExpanded(false)}>Standard edition</Button><Button variant={expanded ? 'default' : 'ghost'} aria-pressed={expanded} onClick={() => setExpanded(true)}>The Final Bow Edition</Button></div>}<ol className="track-list">{tracks.map((track,i) => <li key={track} className={i === 14 ? 'bonus-start' : ''}><span>{String(i + 1).padStart(2,'0')}</span>{track}</li>)}</ol>{expanded && <p className="edition-note">Tracks 15–20 are exclusive to The Final Bow Edition. Digital download · CD · Vinyl. Not on streaming.</p>}</> : <><span className="micro">An instrumental world</span><h2>{album.title}</h2><p>{album.note}</p></>}</section></div>{album.artworkIsPlaceholder && !album.artworkPath && <p className="artwork-disclaimer">The release visual is a conceptual artwork study, not the official album cover.</p>}<nav className="album-pagination" aria-label="More releases"><Link to="/music" className="text-link"><ArrowLeft size={16} /> Back to discography</Link>{next && <Link to="/music/$slug" params={{ slug: next.slug }} className="text-link">{next.title} <ArrowRight size={16} /></Link>}</nav></div>
+ </>;
+}
