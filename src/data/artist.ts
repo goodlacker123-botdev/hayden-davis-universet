@@ -33,6 +33,7 @@ export const artist = {
   socials: [] as { label: string; url: string }[],
   // Set only once the actual public domain is known (no trailing slash).
   siteUrl: '',
+  musicLinksUrl: 'https://hyperfollow.com/haydendavis12',
 };
 
 export const albums: Album[] = [
