@@ -80,10 +80,6 @@ export const albums: Album[] = [
   },
 ];
 
-export const upcoming = {
-  title: 'Toxins', status: 'in-progress' as const,
-  description: 'From romantic hope to accumulating harm, and the bittersweet possibility of healing.',
-};
 
 export function getAlbum(slug: string) { return albums.find(album => album.slug === slug); }
 export function getEditionTracks(album: Album, expanded: boolean) {
