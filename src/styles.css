@@ -149,3 +149,92 @@ h1,h2,h3,p { margin: 0; } h1,h2,h3 { font-weight: 400; }
 @media(max-width:760px) { .stage-hero { height: 390px; }.artist-heading h1 { font-size: 56px; }.section-heading>.text-link { flex-shrink: 0; white-space: nowrap; } }
 @media(max-width:380px) { .stage-hero { height: 350px; }.artist-heading h1 { font-size: 49px; } }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior: auto; } *,*::before,*::after { transition: none !important; animation: none !important; } }
+
+
+/* ART DIRECTION — the public-facing site is a theatrical marquee.
+   Each record opens into its own world, without affecting other pages. */
+.cinematic-home {
+  --background: #160e11;
+  --foreground: #f2e9df;
+  --muted-foreground: #c0aaa5;
+  --border: #51333b;
+  --primary: #d8a987;
+  --primary-foreground: #190d10;
+  background: #160e11;
+  color: #f2e9df;
+  padding-bottom: 3.5rem;
+}
+.cinematic-home .artist-heading { padding-top: clamp(42px,7vw,115px); padding-bottom: clamp(35px,5vw,72px); }
+.cinematic-home .artist-heading h1 { font-size: clamp(4.5rem,11vw,12rem); letter-spacing: -.055em; line-height: .95; }
+.cinematic-home .heading-caption { border-top: 1px solid #76505a; padding-top: 18px; margin-top: 32px; }
+.cinematic-home .stage-hero { height: clamp(500px,63vw,780px); border: 1px solid #62414b; }
+.cinematic-home .stage-hero::after { background: linear-gradient(90deg,rgba(16,5,10,.82),rgba(16,5,10,.26) 75%),linear-gradient(0deg,rgba(16,5,10,.75),transparent 55%); }
+.cinematic-home .stage-content { padding: clamp(28px,5vw,75px); }
+.cinematic-home .stage-title { font-size: clamp(3.8rem,8vw,8.6rem); line-height: .93; letter-spacing: -.055em; max-width: 850px; text-shadow: 0 8px 45px #18080c88; }
+.cinematic-home .stage-title span { color: #df9d80; }
+.cinematic-home .stage-action { background: #f1dfc9; color: #261014; }
+.cinematic-home .stage-under { color: #ddc9bd; }
+.cinematic-home .section-heading h2 { font-size: clamp(2.8rem,5vw,5.7rem); letter-spacing: -.035em; }
+.cinematic-home .album-link h3 { color: #f2e9df; }
+.cinematic-home .album-card-meta,.cinematic-home .album-link p { color: #bba5a0; }
+.cinematic-home .album-image-wrap { box-shadow: 0 18px 38px #0007; }
+.cinematic-home .album-link:hover .album-image-wrap { transform: translateY(-9px) scale(1.012); box-shadow: 0 24px 55px #000b; }
+.cinematic-home .artist-note { border-color: #51333b; }
+.cinematic-home .artist-note h2 { font-size: clamp(2.7rem,4vw,4.8rem); }
+.cinematic-home .text-link:hover { color: #edc1a3; }
+
+/* Record pages — the entire experience, not just a colored banner. */
+.album-experience {
+  --album-paper: #211219;
+  --album-copy: #f4e8e0;
+  --album-muted: #cbb0b2;
+  --album-rule: #67424c;
+  --album-accent: #e2b39d;
+  background: var(--album-paper);
+  color: var(--album-copy);
+  min-height: 100vh;
+  padding-bottom: 35px;
+}
+.album-experience.era-summer {
+  --album-paper: #e2eff1; --album-copy: #22445c; --album-muted: #48677b; --album-rule: #aacbd5; --album-accent: #356e92;
+}
+.album-experience.era-goodbyes {
+  --album-paper: #142e26; --album-copy: #e4ead9; --album-muted: #b4c5b2; --album-rule: #476a54; --album-accent: #c3d1a1;
+}
+.album-experience.era-memories {
+  --album-paper: #0c1631; --album-copy: #e2e8fb; --album-muted: #aab7d5; --album-rule: #3b4e7c; --album-accent: #a4bde9;
+}
+.album-experience.era-days {
+  --album-paper: #e4c05a; --album-copy: #1e1a17; --album-muted: #4e432e; --album-rule: #9d7e36; --album-accent: #443319;
+}
+.album-experience .album-hero { margin-top: 0; padding-block: clamp(65px,9vw,145px); background: transparent; color: var(--album-copy); position: relative; overflow: hidden; }
+.album-experience .album-hero::before { content: ''; position: absolute; width: 62vw; height: 62vw; max-width: 900px; max-height: 900px; right: -15vw; top: -24vw; border: 1px solid var(--album-rule); border-radius: 50%; opacity: .65; pointer-events: none; }
+.album-experience.era-star .album-hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 80% 10%,#b26c5638,transparent 58%); pointer-events: none; }
+.album-experience.era-summer .album-hero::before { border-radius: 50%; box-shadow: 0 0 0 65px #b4d8dd4a,0 0 0 130px #c9e4e85c; }
+.album-experience.era-goodbyes .album-hero::before { border-radius: 0; transform: rotate(25deg); }
+.album-experience.era-memories .album-hero::before { box-shadow: 0 0 0 50px #27365b40,0 0 0 100px #1d2b4b50; }
+.album-experience.era-days .album-hero::before { background: #201d1b; border: none; width: 32vw; height: 32vw; right: 5vw; top: -12vw; }
+.album-experience .album-hero-inner { position: relative; z-index: 1; }
+.album-experience .album-hero h1 { font-size: clamp(3.6rem,7vw,7.6rem); letter-spacing: -.055em; }
+.album-experience .album-hero .album-art { max-width: 510px; border: 8px solid #ffffff15; box-shadow: 0 35px 90px #0005; transform: rotate(1.5deg); }
+.album-experience.era-summer .album-hero .album-art { transform: rotate(-2deg); }
+.album-experience.era-memories .album-hero .album-art { transform: rotate(-1deg); }
+.album-experience .album-details { border-top: 1px solid var(--album-rule); padding-block: clamp(55px,7vw,105px); }
+.album-experience .album-details h2 { color: var(--album-copy); }
+.album-experience .album-details p,.album-experience .album-card-meta,.album-experience .artwork-disclaimer,.album-experience .edition-note { color: var(--album-muted); }
+.album-experience .micro,.album-experience .track-list li span { color: var(--album-accent); }
+.album-experience .track-list li,.album-experience .edition-control,.album-experience .album-pagination { border-color: var(--album-rule); }
+.album-experience .text-link:hover { color: var(--album-accent); }
+.album-experience .edition-control button[aria-pressed="true"] { background: var(--album-copy); color: var(--album-paper); }
+.album-experience .edition-control button[aria-pressed="false"] { color: var(--album-copy); }
+@media(max-width:760px) {
+  .cinematic-home .artist-heading h1 { font-size: clamp(3.5rem,12vw,6rem); }
+  .cinematic-home .stage-hero { height: 570px; }
+  .cinematic-home .stage-title { font-size: clamp(3.6rem,12vw,5.5rem); }
+  .album-experience .album-hero { padding-block: 55px 65px; }
+  .album-experience .album-hero h1 { font-size: clamp(3.5rem,12vw,5.6rem); }
+  .album-experience .album-hero .album-art { max-width: 340px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .cinematic-home .album-image-wrap { transition: none; }
+}
