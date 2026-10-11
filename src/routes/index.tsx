@@ -2,7 +2,7 @@ import { createFileRoute, Link } from '@tanstack/react-router';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { AlbumCard } from '@/components/album-card';
-import { albums, artist, upcoming } from '@/data/artist';
+import { albums, artist } from '@/data/artist';
 import { pageHead } from '@/lib/metadata';
 import theaterStudy from '@/assets/theater-study.jpg';
 
@@ -22,6 +22,5 @@ function Index() {
     <div className="stage-under page-width"><span className="micro">The Death of a Star / Latest release</span><Link to="/music/$slug" params={{ slug: 'the-death-of-a-star' }} className="text-link">Step inside the album <ArrowRight size={15} /></Link></div>
     <section className="releases-section page-width"><div className="section-heading"><div><span className="micro">The discography</span><h2>Five worlds. One artist.</h2></div><Link to="/music" className="text-link">All releases <ArrowUpRight size={17} /></Link></div><div className="album-grid">{albums.map((album,index) => <AlbumCard key={album.slug} album={album} index={index} />)}</div></section>
     <section className="artist-note page-width"><span className="micro">Behind the music</span><div><h2>No words.<br />Plenty left to say.</h2><p>{artist.bio}</p><Link to="/about" className="text-link">Meet {artist.name} <ArrowUpRight size={17} /></Link></div></section>
-    <section className="upcoming-note page-width"><div><span className="micro">In the studio / Upcoming</span><h2>{upcoming.title}</h2></div><p>{upcoming.description}</p></section>
   </>;
 }
