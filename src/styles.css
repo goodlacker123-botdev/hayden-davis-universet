@@ -12,7 +12,7 @@
   --color-accent: var(--secondary); --color-accent-foreground: var(--foreground);
   --color-border: var(--border); --color-input: var(--border); --color-ring: var(--primary);
   --color-destructive: var(--destructive); --color-destructive-foreground: var(--primary-foreground);
-  --font-sans: 'Manrope', sans-serif; --font-display: 'Bodoni Moda', Georgia, serif;
+  --font-sans: 'DM Sans', sans-serif; --font-display: 'Cormorant Garamond', Georgia, serif;
   --radius-sm: 2px; --radius-md: 3px; --radius-lg: 6px;
 }
 :root {
@@ -237,4 +237,44 @@ h1,h2,h3,p { margin: 0; } h1,h2,h3 { font-weight: 400; }
 }
 @media(prefers-reduced-motion:reduce) {
   .cinematic-home .album-image-wrap { transition: none; }
+}
+
+/* Second art-direction pass: editorial cinema, not a five-card portfolio. */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+.wordmark,.footer-name { font-family: var(--font-sans); font-weight: 700; letter-spacing: -.07em; }
+.desktop-nav { font-family: var(--font-sans); font-weight: 600; letter-spacing: .015em; }
+.micro { letter-spacing: .16em; font-size: 10px; }
+.cinematic-home .home-overline { display:flex; align-items:center; justify-content:space-between; gap:20px; color:#bfa7a3; margin-bottom:clamp(22px,4vw,65px); }
+.cinematic-home .artist-heading h1 { font-family:var(--font-sans); font-weight:700; font-size:clamp(4rem,12.2vw,13rem); letter-spacing:-.095em; text-transform:uppercase; }
+.cinematic-home .stage-title { font-family:var(--font-display); font-weight:600; font-style:italic; font-size:clamp(4.6rem,9vw,10rem); }
+.cinematic-home .section-heading h2 { font-family:var(--font-display); font-weight:500; line-height:.95; font-size:clamp(3.7rem,7vw,8rem); }
+.cinematic-home .section-heading h2 em { color:#d6a68d; font-weight:400; }
+.cinematic-home .releases-section { padding-block:clamp(80px,10vw,160px); }
+.era-showcase { border-top:1px solid #694850; }
+.era-showcase-item { display:grid; grid-template-columns:minmax(140px,280px) 1fr 40px; gap:clamp(25px,6vw,100px); align-items:center; border-bottom:1px solid #694850; padding:clamp(24px,4vw,60px) clamp(8px,2vw,32px); position:relative; transition:background .25s; }
+.era-showcase-item:hover { background:#2a181f; }
+.era-showcase-art { width:100%; max-width:280px; box-shadow:0 25px 50px #0007; transition:transform .35s ease; }
+.era-showcase-item:hover .era-showcase-art { transform:rotate(-3deg) scale(1.045); }
+.era-showcase-copy h3 { font-family:var(--font-display); font-weight:500; font-size:clamp(2.9rem,5.7vw,7.1rem); line-height:.92; letter-spacing:-.035em; margin:16px 0; }
+.era-showcase-copy p { color:#cbb5ae; font-size:clamp(12px,1.1vw,15px); }
+.era-showcase-cta { display:inline-flex; align-items:center; gap:12px; margin-top:clamp(22px,3vw,42px); font-size:12px; border-bottom:1px solid #a87978; padding-bottom:8px; }
+.era-showcase-arrow { color:#d6a68d; justify-self:end; }
+.album-experience .album-hero h1 { font-family:var(--font-display); font-weight:600; font-size:clamp(4.2rem,8.3vw,10rem); line-height:.9; letter-spacing:-.04em; }
+.album-experience .album-hero p { font-size:15px; }
+.album-experience .album-details h2 { font-family:var(--font-display); font-weight:600; font-size:clamp(2.5rem,3.6vw,4.2rem); line-height:1.03; }
+.album-experience .album-details { grid-template-columns:minmax(0,1fr) minmax(0,1.15fr); gap:clamp(40px,7vw,140px); }
+.album-experience .track-list li { padding-block:19px; font-size:13px; }
+.album-experience .album-hero .album-art { max-width:570px; }
+@media(max-width:760px) {
+ .cinematic-home .home-overline { margin-bottom:30px; }
+ .cinematic-home .home-overline .micro { font-size:8px; }
+ .cinematic-home .artist-heading h1 { font-size:clamp(3rem,12vw,5.5rem); }
+ .cinematic-home .stage-title { font-size:clamp(4rem,13vw,6rem); }
+ .era-showcase-item { grid-template-columns:100px 1fr; gap:18px; padding:27px 0; }
+ .era-showcase-copy h3 { font-size:clamp(2.25rem,8vw,4rem); margin:8px 0; }
+ .era-showcase-copy .micro { font-size:8px; }
+ .era-showcase-copy p { font-size:11px; }
+ .era-showcase-cta { font-size:10px; margin-top:16px; }
+ .era-showcase-arrow { display:none; }
+ .album-experience .album-details { grid-template-columns:1fr; }
 }
