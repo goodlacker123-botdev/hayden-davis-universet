@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -240,7 +241,7 @@ h1,h2,h3,p { margin: 0; } h1,h2,h3 { font-weight: 400; }
 }
 
 /* Second art-direction pass: editorial cinema, not a five-card portfolio. */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+
 .wordmark,.footer-name { font-family: var(--font-sans); font-weight: 700; letter-spacing: -.07em; }
 .desktop-nav { font-family: var(--font-sans); font-weight: 600; letter-spacing: .015em; }
 .micro { letter-spacing: .16em; font-size: 10px; }
