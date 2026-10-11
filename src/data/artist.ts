@@ -19,7 +19,7 @@ export interface Album {
   artworkIsPlaceholder: boolean;
   tracks?: string[];
   edition?: AlbumEdition;
-  links: { website?: string; streaming?: string; purchase?: string };
+  links: { website?: string; streaming?: string; purchase?: string; deluxeStreaming?: string };
 }
 
 export const artist = {
@@ -34,6 +34,8 @@ export const artist = {
   // Set only once the actual public domain is known (no trailing slash).
   siteUrl: '',
   musicLinksUrl: 'https://hyperfollow.com/haydendavis12',
+  spotifyUrl: 'https://open.spotify.com/artist/2KkUezJZiTh9ooy5Fuzv3B',
+  appleMusicUrl: 'https://music.apple.com/us/artist/hayden-davis/1446486188',
 };
 
 export const albums: Album[] = [
@@ -56,7 +58,7 @@ export const albums: Album[] = [
     theme: 'A season. A feeling. A little blue.',
     description: 'Soft light, distant horizons, and the bittersweet feeling of a summer that cannot stay. A world of vacation memories and warmth touched by melancholy.',
     note: 'For the moments between the sunshine and the leaving.',
-    artworkIsPlaceholder: true, links: {},
+    artworkIsPlaceholder: true, links: { streaming: 'https://distrokid.com/hyperfollow/haydendavis3/summer-blues', deluxeStreaming: 'https://distrokid.com/hyperfollow/haydendavis3/summer-blues-the-low-tide-edition' },
   },
   {
     slug: 'silent-goodbyes', title: 'Silent Goodbyes', status: 'released', palette: 'goodbyes',
@@ -77,7 +79,7 @@ export const albums: Album[] = [
     theme: 'Between daylight and deep space.',
     description: 'Mustard yellow meets black in a world of day, night, and space. These Days finds a story in shifting light and the ordinary moments held between it.',
     note: 'A different perspective on the everyday.',
-    artworkIsPlaceholder: true, links: {},
+    artworkIsPlaceholder: true, links: { deluxeStreaming: 'https://distrokid.com/hyperfollow/haydendavis3/these-days-the-insomnia-edition-2' },
   },
 ];
 
