@@ -12,7 +12,7 @@ export const Route = createFileRoute('/')({
 });
 
 function Index() {
-  return <>
+  return <div className="cinematic-home">
     <div className="artist-heading page-width"><h1>{artist.name}</h1><div className="heading-caption"><span className="micro">Instrumental music / Emotional storytelling</span><span className="artist-tagline">{artist.tagline}</span></div></div>
     <section className="stage-hero page-width" aria-labelledby="latest-title">
       {/* Generated stage concept, not an artist photograph or official album cover. */}
@@ -23,5 +23,5 @@ function Index() {
     <section className="releases-section page-width"><div className="section-heading"><div><span className="micro">The discography</span><h2>Five worlds. One artist.</h2></div><Link to="/music" className="text-link">All releases <ArrowUpRight size={17} /></Link></div><div className="album-grid">{albums.map((album,index) => <AlbumCard key={album.slug} album={album} index={index} />)}</div></section>
     <section className="artist-note page-width" aria-labelledby="listen-title"><span className="micro">Listen everywhere</span><div><h2 id="listen-title">Your next listen<br />starts here.</h2><p>Explore the music on your favorite platform, or find streaming, downloads, and physical editions in one place.</p><div className="flex flex-wrap gap-5 mt-5"><a href={artist.spotifyUrl} className="text-link" target="_blank" rel="noopener noreferrer">Spotify <ArrowUpRight size={17} /></a><a href={artist.appleMusicUrl} className="text-link" target="_blank" rel="noopener noreferrer">Apple Music <ArrowUpRight size={17} /></a><a href={artist.bandcampUrl} className="text-link" target="_blank" rel="noopener noreferrer">Shop music <ArrowUpRight size={17} /></a><a href={artist.musicLinksUrl} className="text-link" target="_blank" rel="noopener noreferrer">All music links <ArrowUpRight size={17} /></a></div></div></section>
     <section className="artist-note page-width"><span className="micro">Behind the music</span><div><h2>No words.<br />Plenty left to say.</h2><p>{artist.bio}</p><Link to="/about" className="text-link">Meet {artist.name} <ArrowUpRight size={17} /></Link></div></section>
-  </>;
+  </div>;
 }
