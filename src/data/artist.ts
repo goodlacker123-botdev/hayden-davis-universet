@@ -19,7 +19,7 @@ export interface Album {
   artworkIsPlaceholder: boolean;
   tracks?: string[];
   edition?: AlbumEdition;
-  links: { website?: string; streaming?: string; purchase?: string; deluxeStreaming?: string };
+  links: { website?: string; streaming?: string; purchase?: string; deluxeStreaming?: string; bandcamp?: string; physical?: string; tunegoody?: string };
 }
 
 export const artist = {
@@ -36,6 +36,7 @@ export const artist = {
   musicLinksUrl: 'https://hyperfollow.com/haydendavis12',
   spotifyUrl: 'https://open.spotify.com/artist/2KkUezJZiTh9ooy5Fuzv3B',
   appleMusicUrl: 'https://music.apple.com/us/artist/hayden-davis/1446486188',
+  bandcampUrl: 'https://haydendavisoff.bandcamp.com/',
 };
 
 export const albums: Album[] = [
@@ -58,7 +59,7 @@ export const albums: Album[] = [
     theme: 'A season. A feeling. A little blue.',
     description: 'Soft light, distant horizons, and the bittersweet feeling of a summer that cannot stay. A world of vacation memories and warmth touched by melancholy.',
     note: 'For the moments between the sunshine and the leaving.',
-    artworkIsPlaceholder: true, links: { streaming: 'https://distrokid.com/hyperfollow/haydendavis3/summer-blues', deluxeStreaming: 'https://distrokid.com/hyperfollow/haydendavis3/summer-blues-the-low-tide-edition' },
+    artworkIsPlaceholder: true, links: { streaming: 'https://distrokid.com/hyperfollow/haydendavis3/summer-blues', deluxeStreaming: 'https://distrokid.com/hyperfollow/haydendavis3/summer-blues-the-low-tide-edition', bandcamp: 'https://haydendavisoff.bandcamp.com/album/summer-blues', physical: 'https://haydendavisoff.bandcamp.com/album/summer-blues' },
   },
   {
     slug: 'silent-goodbyes', title: 'Silent Goodbyes', status: 'released', palette: 'goodbyes',
