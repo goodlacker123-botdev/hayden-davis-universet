@@ -39,11 +39,11 @@ export function AlbumArt({ album, eager = false }: { album: Album; eager?: boole
   const artwork = album.artworkPath ?? catalogArt;
   if (artwork && !failed) return <img className="album-art real-art" src={artwork} alt={`${album.title} album artwork`} width={600} height={600} loading={eager ? 'eager' : 'lazy'} onError={() => setFailed(true)} />;
   return (
-    <div className={`album-art art-${album.palette}`} role="img" aria-label={`${album.title} — conceptual artwork study`}>
+    <div className={`album-art art-${album.palette}`} role="img" aria-label={`${album.title} album cover unavailable; title shown instead`}>
       <span className="art-artist">{artist.name}</span>
       <div className="art-motif" aria-hidden="true"><span /><span /><span /></div>
       <span className="art-title">{album.title}</span>
-      <span className="art-caption">Instrumental / visual study</span>
+      <span className="art-caption">Hayden Davis / Album</span>
     </div>
   );
 }
