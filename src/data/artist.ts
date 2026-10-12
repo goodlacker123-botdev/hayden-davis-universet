@@ -46,7 +46,7 @@ export const albums: Album[] = [
     theme: 'Fame. Fire. The final curtain.',
     description: 'A cinematic world of marquee lights, ambition, and the cost of being seen. Told in acts, The Death of a Star follows the spectacle of a rise, the silence of a fall, and what remains when the lights go out.',
     note: 'An instrumental story in three acts. From the opening performance to the ashes left on the stage.',
-    artworkIsPlaceholder: true,
+    artworkIsPlaceholder: false,
     tracks: ['The Opening Performance (Act I)', 'Under the Marquee Lights', 'Talk of the Town', 'Rise of a Spectacle (Interlude)', 'The Fading Spotlight (Act II)', 'Battle For the Lead', 'Fall From Fame', 'Pull the Plug (Interlude)', 'The Comeback (Act III)', 'When the Lights Go Out', 'Finale in Flames', 'Embers of the Mistakes', 'Ashes on the Stage', 'The Death of a Star'],
     edition: {
       title: 'The Final Bow Edition',
@@ -60,7 +60,7 @@ export const albums: Album[] = [
     theme: 'A season. A feeling. A little blue.',
     description: 'Soft light, distant horizons, and the bittersweet feeling of a summer that cannot stay. A world of vacation memories and warmth touched by melancholy.',
     note: 'For the moments between the sunshine and the leaving.',
-    artworkIsPlaceholder: true, links: {streaming: 'https://distrokid.com/hyperfollow/haydendavis3/summer-blues', deluxeStreaming: 'https://distrokid.com/hyperfollow/haydendavis3/summer-blues-the-low-tide-edition', bandcamp: 'https://haydendavisoff.bandcamp.com/album/summer-blues', physical: 'https://haydendavisoff.bandcamp.com/album/summer-blues', appleMusic: 'https://music.apple.com/us/album/summer-blues-the-low-tide-edition/1832402539', amazonMusic: 'https://music.amazon.com/albums/B0FLW6PJFS' },
+    artworkIsPlaceholder: true, links: {streaming: 'https://distrokid.com/hyperfollow/haydendavis3/summer-blues', deluxeStreaming: 'https://distrokid.com/hyperfollow/haydendavis3/summer-blues-the-low-tide-edition', bandcamp: 'https://haydendavisoff.bandcamp.com/album/summer-blues', appleMusic: 'https://music.apple.com/us/album/summer-blues-the-low-tide-edition/1832402539', amazonMusic: 'https://music.amazon.com/albums/B0FLW6PJFS' },
   },
   {
     slug: 'silent-goodbyes', title: 'Silent Goodbyes', status: 'released', palette: 'goodbyes',
