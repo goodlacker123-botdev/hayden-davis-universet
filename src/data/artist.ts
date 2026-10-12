@@ -35,6 +35,7 @@ export const artist = {
   siteUrl: '',
   musicLinksUrl: 'https://hyperfollow.com/haydendavis12',
   spotifyUrl: 'https://open.spotify.com/artist/2KkUezJZiTh9ooy5Fuzv3B',
+  amazonMusicUrl: 'https://music.amazon.com/artists/B01BGW1M3O/hayden-davis',
   appleMusicUrl: 'https://music.apple.com/us/artist/hayden-davis/1446486188',
   bandcampUrl: 'https://haydendavisoff.bandcamp.com/',
 };
