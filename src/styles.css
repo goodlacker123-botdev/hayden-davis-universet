@@ -435,3 +435,37 @@ h1,h2,h3,p { margin: 0; } h1,h2,h3 { font-weight: 400; }
 .shop-empty button { border-bottom:1px solid currentColor; cursor:pointer; }
 @media(max-width:900px) { .shop-offers { grid-template-columns:1fr; } }
 @media(max-width:600px) { .shop-toolbar { align-items:flex-start; flex-direction:column; } .shop-offer { grid-template-columns:105px 1fr; gap:17px; padding:30px 0; } .shop-offer-art { width:105px; } .shop-offer-copy h2 { font-size:2.2rem; } .shop-more { grid-template-columns:1fr; } .shop-intro h1 { font-size:clamp(4.2rem,16vw,7rem); } }
+
+/* Official music shop — product-led editorial styling */
+.shop-page { background:#f1ede6; color:#28221f; min-height:80vh; padding:clamp(55px,8vw,115px) 0 95px; }
+.shop-intro { padding-bottom:clamp(55px,8vw,115px); border-bottom:1px solid #bcb3a8; }
+.shop-intro .micro,.shop-toolbar .micro,.shop-offer .micro,.shop-more .micro { color:#73675e; }
+.shop-intro h1 { font-family:var(--font-display); font-size:clamp(5rem,12vw,13rem); font-weight:500; letter-spacing:-.065em; line-height:.83; margin:30px 0 34px; }
+.shop-intro h1 em { font-weight:400; }
+.shop-intro>p { max-width:550px; font-size:clamp(15px,1.5vw,20px); line-height:1.7; }
+.shop-toolbar { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; padding:26px 0 45px; }
+.shop-filters { display:flex; gap:8px; flex-wrap:wrap; }
+.shop-filters button { background:transparent; border:1px solid #b8aea3; padding:10px 19px; font-size:12px; cursor:pointer; color:inherit; transition:background .2s,color .2s; }
+.shop-filters button.is-active,.shop-filters button:hover { background:#29211f; color:#fffaf4; border-color:#29211f; }
+.shop-offers { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(45px,5vw,90px) clamp(25px,4vw,70px); }
+.shop-offer { min-width:0; }
+.shop-offer-art { aspect-ratio:1; background:#ded5c9; overflow:hidden; }
+.shop-offer-art .album-art { width:100%; height:100%; object-fit:cover; }
+.shop-offer-copy { padding:22px 0 0; }
+.shop-offer h2 { font-family:var(--font-display); font-size:clamp(2.8rem,4vw,5.2rem); font-weight:500; letter-spacing:-.045em; line-height:1; margin:12px 0; }
+.shop-offer-copy>p { color:#5d534c; font-size:13px; line-height:1.7; }
+.shop-offer-copy .shop-edition { font-size:15px; color:#28221f; font-weight:600; margin-bottom:6px; }
+.shop-offer-actions { margin-top:23px; display:flex; justify-content:space-between; align-items:center; gap:20px; border-top:1px solid #bcb3a8; padding-top:18px; }
+.shop-price { font-size:13px; font-weight:600; }
+.shop-buy { display:inline-flex; align-items:center; gap:9px; font-size:13px; font-weight:600; border-bottom:1px solid currentColor; padding-bottom:4px; }
+.shop-buy:hover { opacity:.6; }
+.shop-empty { padding:80px 0; }
+.shop-empty h2,.shop-more h2 { font-family:var(--font-display); font-size:clamp(3rem,5vw,6rem); font-weight:500; line-height:1; }
+.shop-empty button { margin-top:18px; text-decoration:underline; cursor:pointer; }
+.shop-more { margin-top:clamp(95px,13vw,200px); padding:50px 0; border-top:1px solid #bcb3a8; display:grid; grid-template-columns:1.4fr 1fr; gap:45px; }
+.shop-more h2 { margin:20px 0; }
+.shop-more p { max-width:550px; font-size:14px; line-height:1.75; color:#5d534c; margin-bottom:24px; }
+.shop-store-list { display:flex; flex-direction:column; align-self:center; }
+.shop-store-list a { display:flex; justify-content:space-between; gap:15px; padding:23px 0; border-bottom:1px solid #bcb3a8; font-size:16px; }
+.shop-disclaimer { color:#73675e; font-size:11px; max-width:850px; line-height:1.8; }
+@media(max-width:700px) { .shop-offers { grid-template-columns:1fr; } .shop-more { grid-template-columns:1fr; } .shop-intro h1 { font-size:clamp(4.5rem,16vw,8rem); } }
