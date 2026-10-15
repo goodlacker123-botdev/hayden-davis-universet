@@ -4,7 +4,7 @@ import { ArrowUpRight, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { artist } from '@/data/artist';
 
-const navigation = [{ to: '/', label: 'Home' }, { to: '/music', label: 'Music' }, { to: '/about', label: 'About' }, { to: '/contact', label: 'Contact' }] as const;
+const navigation = [{ to: '/', label: 'Home' }, { to: '/music', label: 'Music' }, { to: '/shop', label: 'Shop' }, { to: '/about', label: 'About' }, { to: '/contact', label: 'Contact' }] as const;
 
 export function SiteShell({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
@@ -36,7 +36,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
       <main id="main-content">{children}</main>
       <footer className="site-footer page-width">
         <div className="footer-top"><Link to="/" className="footer-name">{artist.name}<span>.</span></Link><p>Independent music.<br />A world of its own.</p><Link to="/contact" className="text-link">Get in touch <ArrowUpRight size={17} /></Link></div>
-        <div className="footer-bottom"><span>© {new Date().getFullYear()} {artist.name}</span><span>Instrumental music. Emotional storytelling.</span><nav aria-label="Footer navigation"><Link to="/music">Music</Link><a href={artist.musicLinksUrl} target="_blank" rel="noopener noreferrer">Listen</a><Link to="/about">About</Link><Link to="/contact">Contact</Link>{artist.socials.map(social => <a key={social.label} href={social.url} target="_blank" rel="noopener noreferrer">{social.label}</a>)}</nav></div>
+        <div className="footer-bottom"><span>© {new Date().getFullYear()} {artist.name}</span><span>Instrumental music. Emotional storytelling.</span><nav aria-label="Footer navigation"><Link to="/music">Music</Link><Link to="/shop">Shop</Link><a href={artist.musicLinksUrl} target="_blank" rel="noopener noreferrer">Listen</a><Link to="/about">About</Link><Link to="/contact">Contact</Link>{artist.socials.map(social => <a key={social.label} href={social.url} target="_blank" rel="noopener noreferrer">{social.label}</a>)}</nav></div>
       </footer>
     </>
   );
