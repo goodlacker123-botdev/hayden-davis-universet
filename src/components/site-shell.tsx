@@ -4,7 +4,7 @@ import { ArrowUpRight, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { artist } from '@/data/artist';
 
-const navigation = [{ to: '/', label: 'Home' }, { to: '/music', label: 'Music' }, { to: '/shop', label: 'Shop' }, { to: '/about', label: 'About' }, { to: '/contact', label: 'Contact' }] as const;
+const navigation = [{ to: '/', label: 'Home' }, { to: '/music', label: 'Music' }, { to: '/shop', label: 'Shop' }, { to: '/shop', label: 'Shop' }, { to: '/about', label: 'About' }, { to: '/contact', label: 'Contact' }] as const;
 
 export function SiteShell({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
