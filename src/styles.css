@@ -398,3 +398,40 @@ h1,h2,h3,p { margin: 0; } h1,h2,h3 { font-weight: 400; }
 .album-experience .edition-control { border-color:var(--album-rule); }
 .album-experience .artwork-disclaimer { display:none; }
 @media(max-width:760px) { .album-experience .album-hero .album-art { max-width:330px; } }
+
+/* Shop: editorial catalog, integrated with the artist site */
+.shop-page { background:#21151b; color:#f2e8e0; min-height:80vh; padding:0 0 110px; }
+.shop-intro { padding:clamp(75px,10vw,150px) 0 clamp(65px,9vw,135px); border-bottom:1px solid #795b5d; }
+.shop-intro .micro { color:#d4aca7; }
+.shop-intro h1 { font-family:var(--font-display); font-size:clamp(5rem,11vw,13rem); font-weight:500; letter-spacing:-.06em; line-height:.82; margin:32px 0; }
+.shop-intro h1 em { color:#d5a59b; }
+.shop-intro>p { max-width:580px; color:#c9b6b2; line-height:1.8; font-size:15px; }
+.shop-toolbar { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:28px 0; border-bottom:1px solid #795b5d; }
+.shop-filters { display:flex; gap:6px; flex-wrap:wrap; }
+.shop-filters button { color:#dbc6bf; background:transparent; border:1px solid #6d5054; padding:10px 16px; font-size:12px; cursor:pointer; }
+.shop-filters button.is-active { color:#24151a; background:#f1e3d8; border-color:#f1e3d8; }
+.shop-filters button:focus-visible,.shop-buy:focus-visible { outline:2px solid #f1e3d8; outline-offset:3px; }
+.shop-offers { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 55px; }
+.shop-offer { display:grid; grid-template-columns:140px 1fr; gap:25px; align-items:start; padding:45px 0; border-bottom:1px solid #795b5d; min-width:0; }
+.shop-offer-art { width:140px; }
+.shop-offer-art .album-art { width:100%; height:auto; aspect-ratio:1; object-fit:cover; }
+.shop-offer-copy { min-width:0; }
+.shop-offer-copy .micro { color:#cfa6a1; }
+.shop-offer-copy h2 { font-family:var(--font-display); font-size:clamp(2rem,3vw,3.7rem); line-height:.95; font-weight:500; margin:12px 0; }
+.shop-offer-copy p { color:#cbb9b2; font-size:13px; line-height:1.65; }
+.shop-offer-copy .shop-edition { color:#f1e3d8; font-weight:600; }
+.shop-offer-actions { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-top:20px; }
+.shop-price { font-size:13px; }
+.shop-buy { display:inline-flex; align-items:center; gap:10px; border-bottom:1px solid #cba19c; padding-bottom:6px; font-size:12px; }
+.shop-more { display:grid; grid-template-columns:1.2fr 1fr; gap:55px; padding:clamp(75px,10vw,140px) 0; border-bottom:1px solid #795b5d; }
+.shop-more h2 { font-family:var(--font-display); font-size:clamp(3rem,5vw,6rem); line-height:.95; margin:18px 0; }
+.shop-more p { color:#cbb9b2; line-height:1.7; max-width:520px; margin-bottom:25px; }
+.shop-store-list { align-self:center; }
+.shop-store-list a { display:flex; justify-content:space-between; align-items:center; padding:20px 0; border-bottom:1px solid #795b5d; }
+.shop-disclaimer { font-size:11px; line-height:1.7; color:#b7a29e; padding-top:25px; }
+.shop-empty { padding:80px 0; border-bottom:1px solid #795b5d; }
+.shop-empty h2 { font-family:var(--font-display); font-size:clamp(2rem,4vw,4rem); }
+.shop-empty p { color:#cbb9b2; margin:20px 0; }
+.shop-empty button { border-bottom:1px solid currentColor; cursor:pointer; }
+@media(max-width:900px) { .shop-offers { grid-template-columns:1fr; } }
+@media(max-width:600px) { .shop-toolbar { align-items:flex-start; flex-direction:column; } .shop-offer { grid-template-columns:105px 1fr; gap:17px; padding:30px 0; } .shop-offer-art { width:105px; } .shop-offer-copy h2 { font-size:2.2rem; } .shop-more { grid-template-columns:1fr; } .shop-intro h1 { font-size:clamp(4.2rem,16vw,7rem); } }
