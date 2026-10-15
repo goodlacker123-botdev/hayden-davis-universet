@@ -11,8 +11,9 @@ const offers: ShopOffer[] = [
  { albumSlug:'summer-blues',edition:'Standard edition',format:'Vinyl',store:'elasticStage',url:'https://elasticstage.com/haydendavis/releases/summer-blues-album',detail:'12-inch record · see retailer for formats and current availability',price:'From $37.99' },
  { albumSlug:'summer-blues',edition:'Standard edition',format:'CD',store:'elasticStage',url:'https://elasticstage.com/haydendavis/releases/summer-blues-album',detail:'Compact disc · see retailer for formats and current availability',price:'From $16.99' },
  { albumSlug:'summer-blues',edition:'Standard edition',format:'Digital',store:'Bandcamp',url:'https://haydendavisoff.bandcamp.com/album/summer-blues',detail:'MP3, FLAC and other high-quality formats',price:'From $7.99' },
- { albumSlug:'the-death-of-a-star',edition:'The Final Bow Edition',format:'Vinyl',store:'Official album website',url:'https://hd5album.netlify.app',detail:'Physical deluxe edition · check the official album website for the vinyl purchase option' },
- { albumSlug:'the-death-of-a-star',edition:'The Final Bow Edition',format:'CD',store:'Official album website',url:'https://hd5album.netlify.app',detail:'Physical deluxe edition · check the official album website for the CD purchase option' },
+ { albumSlug:'the-death-of-a-star',edition:'The Final Bow Edition',format:'Vinyl',store:'TuneGoody',url:'https://www.tunegoody.com/artist/hayden-davis/album/the-death-of-a-star-the-final-bow-edition',detail:'The Final Bow Edition · vinyl available through TuneGoody' },
+ { albumSlug:'the-death-of-a-star',edition:'The Final Bow Edition',format:'CD',store:'TuneGoody',url:'https://www.tunegoody.com/artist/hayden-davis/album/the-death-of-a-star-the-final-bow-edition',detail:'The Final Bow Edition · CD available through TuneGoody' },
+ { albumSlug:'the-death-of-a-star',edition:'The Final Bow Edition',format:'Digital',store:'TuneGoody',url:'https://www.tunegoody.com/artist/hayden-davis/album/the-death-of-a-star-the-final-bow-edition',detail:'Deluxe digital download · available through TuneGoody' },
  { albumSlug:'the-death-of-a-star',edition:'Standard edition',format:'Digital',store:'Bandcamp',url:'https://haydendavisoff.bandcamp.com/album/the-death-of-a-star',detail:'Visit the release page for current digital options' },
 ];
 const formats:Format[]=['All formats','Vinyl','CD','Digital'];
